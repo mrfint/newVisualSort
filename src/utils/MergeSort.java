@@ -37,7 +37,8 @@ public class MergeSort extends Sorter{
 		//here we have 2 sorted sub-arrays - [start - end_1st_part] and [start_2nd_part - end]
 		//and we have to merge them.
 		while ((i <= end_1st_part) | (j <= end_2nd_part)) {
-			if (j > end_2nd_part || (i <= end_1st_part && a[i] < a[j])){
+                    compareCount++;
+                    if (j > end_2nd_part || (i <= end_1st_part && a[i] < a[j])){
 				tmp[ind] = a[i];
 				i++;
 			}
@@ -46,7 +47,7 @@ public class MergeSort extends Sorter{
 				j++;
 			}
                         
-			ind++;
+                    ind++;
 		}
 		
 		//move sorted data from tmp array to origin array

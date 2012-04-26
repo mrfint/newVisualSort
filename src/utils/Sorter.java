@@ -11,11 +11,14 @@ public abstract class Sorter implements Runnable{
     protected final int DELAY = 10;
     protected int[] a;
     protected xPanel xpan;
-    private int swapCount;
+    protected int swapCount;
+    protected int compareCount;
     
-    protected void initA(int[] a) {
-        this.a = a;
+    protected void initA(int[] sa) {
+        this.a = sa;
+
         swapCount = 0;
+        compareCount = 0;
     }
     public void prepareShow(xPanel xpan) {
         this.xpan = xpan;
@@ -39,19 +42,15 @@ public abstract class Sorter implements Runnable{
     }
     protected void swap(){
         swapCount++;
-        ((CaptPanel)xpan.getComponent(0)).refresh(swapCount);
+        ((CaptPanel)xpan.getComponent(0)).repaint(swapCount, compareCount);
         if(xpan!=null){
-            ((GistPanel)xpan.getComponent(1)).refresh();
+            ((GistPanel)xpan.getComponent(1)).repaint();
             try {
                 Thread.sleep(DELAY);
             } catch (InterruptedException ex) {
                 Logger.getLogger(BubbleSort.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }
-
-    public int getSwapCount() {
-        return swapCount;
     }
     
 }

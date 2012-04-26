@@ -19,7 +19,8 @@ public class ShellSort extends Sorter{
             for (i=k; i<b; i++){     // k-сортировка
                 j=i;
                 h=a[i];
-                while ((j >= k) && (a[j-k] > h)){  
+                while ((j >= k) && (a[j-k] > h)){ 
+                    compareCount++;
                     a[j]=a[j-k];
                     j =  j-k;
                 }

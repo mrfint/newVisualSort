@@ -52,8 +52,5 @@ public class GistPanel extends JPanel{
             g.drawRect(10+i*wRect, getHeight()-khRect*a[i], wRect, khRect*a[i]);
         }
     }
-
-    public void refresh() {
-        repaint();
-    }   
+ 
 }
