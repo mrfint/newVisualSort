@@ -39,11 +39,11 @@ public class Controller {
         ActionListener btnInt = new ActionListener() {
           @Override
             public void actionPerformed(ActionEvent e) {
-                initMass();
+                initMass();            // Init array A by random numbers
                 JPanel jpFace = (JPanel) mf.getJpFace();
                 for (int i = 0; i < jpFace.getComponentCount(); i++) 
-                {   GistPanel comp = ((xPanel)jpFace.getComponent(i)).getGistPanel();
-                    comp.initMass(a, H);
+                {   GistPanel gistPanel = ((xPanel)jpFace.getComponent(i)).getGistPanel();
+                    gistPanel.initMass(a, H);
                 }      
                 
             }
