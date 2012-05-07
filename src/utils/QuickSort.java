@@ -32,11 +32,9 @@ public class QuickSort extends Sorter{
                 }
 
                     if (i <= j) {
-                        y = items[i];
-                        items[i] = items[j];
-                        items[j] = y;
+                        swap(i,j);
                         i++; j--;
-                        swap();
+                        
                     }
         } while (i <= j);
         

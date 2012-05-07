@@ -8,7 +8,7 @@ import view.xPanel;
 
 public class ShellSort extends Sorter{
     
-    @Override
+   @Override
    public void sort(int[] sa) {       
         initA(sa);
         int i, j, k, h, m=0, b=a.length;
