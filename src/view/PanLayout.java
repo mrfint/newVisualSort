@@ -40,7 +40,6 @@ class PanLayout implements LayoutManager
         {
             int row = parent.getHeight();
             int width = parent.getWidth()/(components.length);
-            int width2 = parent.getWidth();
             int col = (parent.getWidth()-width*components.length)/2;
 
             for(int k=0; k<components.length; k++) {
