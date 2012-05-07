@@ -16,7 +16,7 @@ public class Controller {
     private MainFrame mf;
     
     private int[]       a = null; // Mass A
-    private final int   N = 50;   // quals of element
+    private final int   N = 20;   // quals of element
     private final int   H = 10;   // h - max element of mass A
     
     private FactorySorter factSorter = null;
