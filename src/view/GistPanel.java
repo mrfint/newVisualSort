@@ -16,12 +16,12 @@ public class GistPanel extends JPanel{
     private Sorter sorter = null;
     private int wRect, khRect;
     private String name;
+    
     public GistPanel(String name) {
         super(new PanLayout());       
         this.name  = name;
         sorter = FactorySorter.getInstance(name);
         setBackground(Color.white);
-        setBounds(100,100,100,200);
     }
     public void initMass( int[] a, int h )
     {
@@ -32,9 +32,7 @@ public class GistPanel extends JPanel{
           add(new gRect(a[i]*khRect));
           validate();
         }
-        
-        
-    }
+     }
     
     public void startSort(){
         sorter.prepareShow((xPanel)getParent());

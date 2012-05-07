@@ -16,7 +16,6 @@ public abstract class Sorter implements Runnable{
     
     protected void initA(int[] sa) {
         this.a = sa;
-
         swapCount = 0;
         compareCount = 0;
     }
@@ -48,7 +47,7 @@ public abstract class Sorter implements Runnable{
             try {
                 Thread.sleep(DELAY);
             } catch (InterruptedException ex) {
-                Logger.getLogger(BubbleSort.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Sorter.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
