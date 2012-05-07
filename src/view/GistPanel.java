@@ -5,6 +5,7 @@ import controller.Controller;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import utils.Sorter;
@@ -16,17 +17,23 @@ public class GistPanel extends JPanel{
     private int wRect, khRect;
     private String name;
     public GistPanel(String name) {
-        super(new GridLayout());
+        super(new PanLayout());       
         this.name  = name;
         sorter = FactorySorter.getInstance(name);
         setBackground(Color.white);
+        setBounds(100,100,100,200);
     }
     public void initMass( int[] a, int h )
     {
         this.a = a.clone();
-        khRect = getHeight()/h;        
+        khRect = getHeight()/h;
+        removeAll();
+        for (int i = 0; i < a.length; i++) {
+          add(new gRect(a[i]*khRect));
+          validate();
+        }
         
-        repaint();        
+        
     }
     
     public void startSort(){
@@ -39,18 +46,4 @@ public class GistPanel extends JPanel{
     {
         return a;     
     }
-    
-    public void paintComponent(Graphics g)
-    {
-        super.paintComponent(g);
-        
-        wRect = getWidth()/(a.length+1);
-        for (int i = 0; i < a.length; i++) {
-            g.setColor(Color.green);
-            g.fillRect(10+i*wRect, getHeight()-khRect*a[i], wRect, khRect*a[i]);
-            g.setColor(Color.black);
-            g.drawRect(10+i*wRect, getHeight()-khRect*a[i], wRect, khRect*a[i]);
-        }
-    }
- 
 }
